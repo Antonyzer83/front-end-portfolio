@@ -16,6 +16,9 @@ import { HomeService } from "./home/home.service";
         PublicComponent,
         HomeComponent
     ],
+    exports: [
+        PublicComponent
+    ],
     providers: [
         HomeService
     ]
