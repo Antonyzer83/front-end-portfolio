@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Home } from "./home";
 
-import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
 import { Observable, of } from "rxjs";
 import {catchError, map, tap } from "rxjs/operators";
 
@@ -13,10 +13,21 @@ export class HomeService {
     baseurl = "http://localhost:8000/api";
     home: Home[];
 
+    /**
+     * Display the action
+     *
+     * @param log
+     */
     private log(log: string) {
         console.info(log);
     }
 
+    /**
+     * Display the error
+     *
+     * @param operation
+     * @param result
+     */
     private handleError<T>(operation='operation', result?: T) {
         return (error: any): Observable<T> => {
             console.log(error);
@@ -26,6 +37,9 @@ export class HomeService {
         }
     }
 
+    /**
+     * Get the home content
+     */
     getHome(): Observable<Home> {
         return this.http.get<Home>(`${this.baseurl}/home`).pipe(
             map((res) => {

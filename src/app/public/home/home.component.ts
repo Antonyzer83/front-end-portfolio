@@ -26,10 +26,5 @@ export class HomeComponent implements OnInit {
                 this.error = err;
             }
         );
-        /*
-        this.homeService.getHome()
-            .subscribe(home => this.home = home);
-        console.log('Home ' + this.home[0].name);
-         */
     }
 }
