@@ -1,17 +1,18 @@
-import { Injectable } from '@angular/core';
-import { Home } from "./home";
+import { Injectable } from "@angular/core";
+import { About } from "./about";
 
 import { HttpClient } from "@angular/common/http";
 import { Observable, of } from "rxjs";
 import {catchError, map, tap } from "rxjs/operators";
 
 @Injectable()
-export class HomeService {
+export class AboutService {
+
 
     constructor(private http: HttpClient) { }
 
     baseurl = "http://localhost:8000/api";
-    home: Home[];
+    about: About[];
 
     /**
      * Display the action
@@ -37,17 +38,14 @@ export class HomeService {
         }
     }
 
-    /**
-     * Get the home content
-     */
-    getHome(): Observable<Home> {
-        return this.http.get<Home>(`${this.baseurl}/home`).pipe(
+    getAbout(): Observable<About> {
+        return this.http.get<About>(`${this.baseurl}/about`).pipe(
             map((res) => {
-                this.home = res['data'];
-                return this.home;
+                this.about = res['data'];
+                return this.about;
             }),
-            tap(_ => this.log('fetched home')),
-            catchError(this.handleError('getHome', []))
+            tap(_ => this.log('fetched about')),
+            catchError(this.handleError('getAbout', []))
         );
     }
 }

@@ -4,7 +4,7 @@
             Accueil
         </button>
 
-        <button [routerLink] = "['/apropos']" routerLinkActive = "router-link-active">
+        <button [routerLink] = "['', { outlets: { public: ['apropos'] } }]" routerLinkActive = "router-link-active">
             A Propos
         </button>
 
