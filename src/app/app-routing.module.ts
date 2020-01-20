@@ -2,9 +2,7 @@ import { NgModule }              from '@angular/core';
 import { RouterModule, Routes }  from '@angular/router';
 
 // routes
-const appRoutes: Routes = [
-    { path: '', redirectTo: '/', pathMatch: 'full' }
-];
+const appRoutes: Routes = [ ];
 
 @NgModule({
     imports: [
