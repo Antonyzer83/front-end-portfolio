@@ -10,10 +10,12 @@ import { HomeComponent } from "./home/home.component";
 import { AboutComponent } from "./about/about.component";
 import { ProjectsListComponent } from "./projects/projects-list.component";
 import { ProjectsDetailComponent } from "./projects/projects-detail.component";
+import { ContactComponent } from "./contact/contact.component";
 
 import { HomeService } from "./home/home.service";
 import { AboutService } from "./about/about.service";
 import { ProjectsService } from "./projects/projects.service";
+import { ContactService } from "./contact/contact.service";
 
 @NgModule({
     imports: [
@@ -27,6 +29,7 @@ import { ProjectsService } from "./projects/projects.service";
         AboutComponent,
         ProjectsListComponent,
         ProjectsDetailComponent,
+        ContactComponent,
     ],
     exports: [
         PublicComponent
@@ -34,7 +37,8 @@ import { ProjectsService } from "./projects/projects.service";
     providers: [
         HomeService,
         AboutService,
-        ProjectsService
+        ProjectsService,
+        ContactService
     ]
 })
 export class PublicModule { }

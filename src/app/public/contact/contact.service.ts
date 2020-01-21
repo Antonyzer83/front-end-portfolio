@@ -1,17 +1,17 @@
 import { Injectable } from "@angular/core";
-import { About } from "./about";
+import { Contact } from "./contact";
 
 import { HttpClient } from "@angular/common/http";
 import { Observable, of } from "rxjs";
 import { catchError, map, tap } from "rxjs/operators";
 
 @Injectable()
-export class AboutService {
+export class ContactService {
 
     constructor(private http: HttpClient) { }
 
     baseurl = "http://localhost:8000/api";
-    about: About[];
+    contact: Contact[];
 
     /**
      * Display the action
@@ -38,16 +38,16 @@ export class AboutService {
     }
 
     /**
-     * Get the about
+     * Get the contact infos
      */
-    getAbout(): Observable<About> {
-        return this.http.get<About>(`${this.baseurl}/about`).pipe(
+    getContact(): Observable<Contact> {
+        return this.http.get<Contact>(`${this.baseurl}/infos`).pipe(
             map((res) => {
-                this.about = res['data'];
-                return this.about;
+                this.contact = res['data'];
+                return this.contact;
             }),
-            tap(_ => this.log('fetched about')),
-            catchError(this.handleError('getAbout', []))
-        );
+            tap(_ => this.log('fetched contact')),
+            catchError(this.handleError('getContact', []))
+        )
     }
 }

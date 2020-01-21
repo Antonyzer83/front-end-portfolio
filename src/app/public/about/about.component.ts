@@ -6,7 +6,7 @@ import { About } from "./about";
 
 @Component({
     selector: 'about',
-    templateUrl: './app/public/about/about.component.html'
+    templateUrl: './app/public/about/about.component.html',
 })
 export class AboutComponent implements OnInit{
 
