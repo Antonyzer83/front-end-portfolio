@@ -8,9 +8,12 @@ import { PublicComponent } from "./public.component";
 
 import { HomeComponent } from "./home/home.component";
 import { AboutComponent } from "./about/about.component";
+import { ProjectsListComponent } from "./projects/projects-list.component";
+import { ProjectsDetailComponent } from "./projects/projects-detail.component";
 
 import { HomeService } from "./home/home.service";
 import { AboutService } from "./about/about.service";
+import { ProjectsService } from "./projects/projects.service";
 
 @NgModule({
     imports: [
@@ -21,14 +24,17 @@ import { AboutService } from "./about/about.service";
     declarations: [
         PublicComponent,
         HomeComponent,
-        AboutComponent
+        AboutComponent,
+        ProjectsListComponent,
+        ProjectsDetailComponent,
     ],
     exports: [
         PublicComponent
     ],
     providers: [
         HomeService,
-        AboutService
+        AboutService,
+        ProjectsService
     ]
 })
 export class PublicModule { }
