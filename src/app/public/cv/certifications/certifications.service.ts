@@ -1,17 +1,17 @@
 import { Injectable } from "@angular/core";
-import { Skills } from "./skills";
+import { Certifications } from "./certifications";
 
 import { HttpClient } from "@angular/common/http";
 import { Observable, of } from "rxjs";
 import { catchError, map, tap } from "rxjs/operators";
 
 @Injectable()
-export class SkillsService {
+export class CertificationsService {
 
     constructor(private http: HttpClient) { }
 
     baseurl = "http://localhost:8000/api";
-    skills: Skills[];
+    certifications: Certifications[];
 
     /**
      * Display the action
@@ -37,17 +37,14 @@ export class SkillsService {
         }
     }
 
-    /**
-     * Get the skills
-     */
-    getSkills(): Observable<Skills> {
-        return this.http.get<Skills>(`${this.baseurl}/skills`).pipe(
+    getCertifications(): Observable<Certifications> {
+        return this.http.get(`${this.baseurl}/certifications`).pipe(
             map((res) => {
-                this.skills = res['data'];
-                return this.skills;
+                this.certifications = res['data'];
+                return this.certifications;
             }),
-            tap(_ => this.log('fetched skills')),
-            catchError(this.handleError('getSkills', []))
+            tap(_ => this.log('fetched certifications')),
+            catchError(this.handleError('getCertifications', []))
         );
     }
 }

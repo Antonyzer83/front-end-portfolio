@@ -1,0 +1,6 @@
+<h2>Mes Certifications</h2>
+
+<div *ngFor="let certification of certifications">
+    <h3><a href="http://{{ certification.link }}">{{ certification.name }}</a></h3>
+    <p>{{ certification.descr }}</p>
+</div>
