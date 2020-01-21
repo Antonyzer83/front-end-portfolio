@@ -13,8 +13,7 @@ export class HomeComponent implements OnInit {
     home: Home = null;
     error: string = null;
 
-    constructor(private homeService: HomeService) {
-    }
+    constructor(private homeService: HomeService) { }
 
     ngOnInit(): void {
         this.homeService.getHome().subscribe(
