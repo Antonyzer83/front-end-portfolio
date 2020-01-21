@@ -1,1 +1,25 @@
-<public></public>
+<header>
+    <nav>
+        <button [routerLink] = "['/']" routerLinkActive = "router-link-active">
+            Accueil
+        </button>
+
+        <button [routerLink] = "['/apropos']" routerLinkActive = "router-link-active">
+            A Propos
+        </button>
+
+        <button [routerLink] = "['/cv']" routerLinkActive = "router-link-active">
+            Mon CV
+        </button>
+
+        <button [routerLink] = "['/projets']" routerLinkActive = "router-link-active">
+            Mes Projets
+        </button>
+
+        <button [routerLink] = "['/contact']" routerLinkActive = "router-link-active">
+            Contact
+        </button>
+    </nav>
+</header>
+
+<router-outlet></router-outlet>

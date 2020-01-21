@@ -1,6 +1,8 @@
 import { NgModule }      from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { CvModule } from "./cv/cv.module";
+
 import { PublicRoutingModule } from "./public-routing.module";
 import { PublicComponent } from "./public.component";
 
@@ -13,6 +15,7 @@ import { AboutService } from "./about/about.service";
 @NgModule({
     imports: [
         CommonModule,
+        CvModule,
         PublicRoutingModule
     ],
     declarations: [
