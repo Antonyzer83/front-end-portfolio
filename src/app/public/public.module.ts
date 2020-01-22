@@ -6,6 +6,7 @@ import { CvModule } from "./cv/cv.module";
 import { PublicRoutingModule } from "./public-routing.module";
 import { PublicComponent } from "./public.component";
 
+import { NavbarComponent } from "./navbar/navbar.component";
 import { HomeComponent } from "./home/home.component";
 import { AboutComponent } from "./about/about.component";
 import { ProjectsListComponent } from "./projects/projects-list.component";
@@ -25,6 +26,7 @@ import { ContactService } from "./contact/contact.service";
     ],
     declarations: [
         PublicComponent,
+        NavbarComponent,
         HomeComponent,
         AboutComponent,
         ProjectsListComponent,
@@ -32,7 +34,8 @@ import { ContactService } from "./contact/contact.service";
         ContactComponent,
     ],
     exports: [
-        PublicComponent
+        PublicComponent,
+        NavbarComponent
     ],
     providers: [
         HomeService,

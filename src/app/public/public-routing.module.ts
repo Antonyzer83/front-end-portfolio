@@ -7,9 +7,11 @@ import { CvComponent } from "./cv/cv.component";
 import { ProjectsListComponent } from "./projects/projects-list.component";
 import { ProjectsDetailComponent } from "./projects/projects-detail.component";
 import { ContactComponent } from "./contact/contact.component";
+import { NavbarComponent } from "./navbar/navbar.component";
 
 const publicRoutes: Routes = [
     { path: '', component: HomeComponent },
+    { path: 'navbar', component: NavbarComponent },
     { path: 'apropos', component: AboutComponent },
     { path: 'cv', component: CvComponent },
     { path: 'projets', component: ProjectsListComponent },

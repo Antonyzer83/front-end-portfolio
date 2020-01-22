@@ -1,0 +1,27 @@
+.menu-icon {
+    height: 30px;
+    width: 30px;
+    position: fixed;
+    z-index: 2;
+    right: 50px;
+    top: 30px;
+    cursor: pointer;
+}
+.menu-icon__line {
+    height: 2px;
+    width: 30px;
+    display: block;
+    background-color: black;
+    margin-bottom: 4px;
+    -webkit-transition: background-color 0.5s ease, -webkit-transform 0.2s ease;
+    transition: background-color 0.5s ease, -webkit-transform 0.2s ease;
+    transition: transform 0.2s ease, background-color 0.5s ease;
+    transition: transform 0.2s ease, background-color 0.5s ease, -webkit-transform 0.2s ease;
+}
+.menu-icon__line-left {
+    width: 15px;
+}
+.menu-icon__line-right {
+    width: 15px;
+    float: right;
+}
