@@ -3,5 +3,5 @@
 <div *ngFor="let skill of skills">
     <p>{{ skill.name }}</p>
     <p>{{ skill.level }}</p>
-    <img src="{{ skill.img_id}}.png" alt="{{ skill.name }}">
+    <img src="./app/assets/images/{{ skill.img_loc}}" alt="{{ skill.name }}">
 </div>

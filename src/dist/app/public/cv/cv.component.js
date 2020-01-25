@@ -13,6 +13,10 @@ CvComponent = __decorate([
     core_1.Component({
         selector: 'cv',
         templateUrl: './app/public/cv/cv.component.html',
+        styleUrls: [
+            './app/public/cv/cv.component.css',
+            './app/shared/button.component.css',
+        ],
     })
 ], CvComponent);
 exports.CvComponent = CvComponent;
