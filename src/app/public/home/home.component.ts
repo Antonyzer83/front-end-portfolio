@@ -6,7 +6,8 @@ import { Home } from "./home";
 
 @Component({
     selector: 'home',
-    templateUrl: './app/public/home/home.component.html'
+    templateUrl: './app/public/home/home.component.html',
+    styleUrls: ['./app/public/home/home.component.css']
 })
 export class HomeComponent implements OnInit {
 

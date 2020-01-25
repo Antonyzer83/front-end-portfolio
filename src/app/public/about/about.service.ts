@@ -7,6 +7,8 @@ import { catchError, map, tap } from "rxjs/operators";
 
 @Injectable()
 export class AboutService {
+    // Créer un service global qu'on appelle dans le constructeur
+    // Faire un dossier shared pour l'ensemble des services d'admin et public
 
     constructor(private http: HttpClient) { }
 
