@@ -1,0 +1,33 @@
+.container {
+    margin-top: 15vh;
+}
+
+img {
+    height: 30vh;
+    margin: 0 0 5vh 0;
+    border-radius: 5%;
+}
+
+h1 {
+    font-size: 7vw;
+}
+
+p {
+    line-height: 2em;
+}
+
+@media only screen and (min-width: 420px) {
+    .container {
+        margin-top: 20vh;
+    }
+
+    h1 {
+        font-size: 4vw;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    img {
+        height: 50vh;
+    }
+}

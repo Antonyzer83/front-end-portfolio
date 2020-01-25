@@ -7,6 +7,10 @@ import { About } from "./about";
 @Component({
     selector: 'about',
     templateUrl: './app/public/about/about.component.html',
+    styleUrls: [
+        './app/public/about/about.component.css',
+        './app/shared/button.component.css',
+    ],
 })
 export class AboutComponent implements OnInit{
 

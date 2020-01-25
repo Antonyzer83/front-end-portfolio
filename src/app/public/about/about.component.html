@@ -1,3 +1,12 @@
-<h1 *ngIf="about">{{ about[0].name }}</h1>
-<p *ngIf="about">{{ about[0].descr }}</p>
-<p *ngIf="about">{{ about[0].img_id }}</p>
+<div class="container">
+    <div class="row flex-column-reverse flex-md-row text-center align-items-center">
+        <div class="col-sm-6">
+            <h1 *ngIf="about">{{ about[0].name }}</h1>
+            <p *ngIf="about">{{ about[0].descr }}</p>
+            <button class="btn draw-border" [routerLink]="['/cv']" routerLinkActive="router-link-active">Mon CV</button>
+        </div>
+        <div class="col-sm-6">
+            <img src="./app/assets/images/moi.jpg" alt="Ma photo de profil">
+        </div>
+    </div>
+</div>
