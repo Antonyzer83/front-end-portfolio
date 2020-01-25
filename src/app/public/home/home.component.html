@@ -1,4 +1,5 @@
 <div class="d-flex align-items-center flex-column">
     <h1 *ngIf="home">{{ home[0].name }}</h1>
     <p *ngIf="home">{{ home[0].intro }}</p>
+    <button class="btn draw-border" [routerLink]="['/apropos']" routerLinkActive="router-link-active">A Propos</button>
 </div>
