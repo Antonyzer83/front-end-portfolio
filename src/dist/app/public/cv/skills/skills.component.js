@@ -30,6 +30,9 @@ SkillsComponent = __decorate([
     core_1.Component({
         selector: 'skills',
         templateUrl: './app/public/cv/skills/skills.component.html',
+        styleUrls: [
+            './app/public/cv/skills/skills.component.css'
+        ],
     }),
     __metadata("design:paramtypes", [skills_service_1.SkillsService])
 ], SkillsComponent);

@@ -7,6 +7,9 @@ import { Skills } from "./skills";
 @Component({
     selector: 'skills',
     templateUrl: './app/public/cv/skills/skills.component.html',
+    styleUrls: [
+        './app/public/cv/skills/skills.component.css'
+    ],
 })
 export class SkillsComponent implements OnInit {
 
