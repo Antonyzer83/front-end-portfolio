@@ -8,7 +8,8 @@ export class Projects {
         goal: string,
         experience: string,
         git: string,
-        img_id: Int16Array
+        img_id: Int16Array,
+        img_lov: string
     ) {
     }
 }

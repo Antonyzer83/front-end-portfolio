@@ -1,0 +1,33 @@
+.container {
+    margin-top: 10vh;
+}
+
+.project-list {
+    margin-top: 5vh;
+}
+
+.div-img {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 60vh;
+    overflow: hidden;
+}
+
+.div-img img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: auto;
+    height: 100%;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+
+@media only screen and (min-width: 420px) {
+    .project {
+        width: 30%;
+    }
+}

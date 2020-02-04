@@ -30,6 +30,7 @@ ProjectsListComponent = __decorate([
     core_1.Component({
         selector: 'projects-list',
         templateUrl: './app/public/projects/projects-list.component.html',
+        styleUrls: ['./app/public/projects/projects-list.component.css']
     }),
     __metadata("design:paramtypes", [projects_service_1.ProjectsService])
 ], ProjectsListComponent);
