@@ -22,4 +22,10 @@ export class PublicComponent implements OnInit{
             }
         });
     }
+
+    convertDates(myDate: Date): string {
+        let monthNames = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
+        let myNew = monthNames[new Date(myDate).getMonth()] + ' ' + new Date(myDate).getFullYear();
+        return myNew;
+    }
 }

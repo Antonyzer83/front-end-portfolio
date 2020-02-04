@@ -1,7 +1,9 @@
-<h2>Mon Parcours Scolaire</h2>
+<h2 class="text-center">Mon Parcours Scolaire</h2>
 
-<div *ngFor="let school of schools">
-    <h3>{{ school.school }} | {{ school.diplom }}</h3>
-    <h4>{{ school.from_date }} - {{ school.to_date }}</h4>
-    <p>{{ school.descr }}</p>
+<div class="d-sm-flex justify-content-around">
+    <div *ngFor="let school of schools" class="p-4 text-center">
+        <h3>{{ school.school }} | {{ school.diplom }}</h3>
+        <h4>{{ convertDates(school.from_date) }} - {{ convertDates(school.to_date) }}</h4>
+        <p>{{ school.descr }}</p>
+    </div>
 </div>
