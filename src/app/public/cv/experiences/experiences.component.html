@@ -1,8 +1,8 @@
-<h2>Mes Expériences</h2>
+<h2 class="mb-5 text-center">Mes Expériences</h2>
 
-<div *ngFor="let experience of experiences">
+<div *ngFor="let experience of experiences" class="text-center m-5">
     <h3>{{ experience.workplace }} | <a href="http://{{ experience.link }}">{{ experience.company }}</a></h3>
-    <h4>{{ experience.from_date }} - {{ experience.to_date }}</h4>
+    <h4>{{ convertDates(experience.from_date) }} - {{ convertDates(experience.to_date) }}</h4>
     <p>{{ experience.descr }}</p>
     <p *ngIf="experience.mission">Missions réalisées : {{ experience.mission }}</p>
 </div>

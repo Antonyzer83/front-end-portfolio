@@ -7,6 +7,7 @@ import { Certifications } from "./certifications";
 @Component({
     selector: 'certifications',
     templateUrl: './app/public/cv/certifications/certifications.component.html',
+    styleUrls: ['./app/public/cv/certifications/certifications.component.css']
 })
 export class CertificationsComponent implements OnInit {
 

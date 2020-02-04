@@ -25,6 +25,11 @@ let ExperiencesComponent = class ExperiencesComponent {
             this.error = err;
         });
     }
+    convertDates(myDate) {
+        let monthNames = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
+        let myNew = monthNames[new Date(myDate).getMonth()] + ' ' + new Date(myDate).getFullYear();
+        return myNew;
+    }
 };
 ExperiencesComponent = __decorate([
     core_1.Component({

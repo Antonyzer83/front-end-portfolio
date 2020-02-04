@@ -30,6 +30,7 @@ CertificationsComponent = __decorate([
     core_1.Component({
         selector: 'certifications',
         templateUrl: './app/public/cv/certifications/certifications.component.html',
+        styleUrls: ['./app/public/cv/certifications/certifications.component.css']
     }),
     __metadata("design:paramtypes", [certifications_service_1.CertificationsService])
 ], CertificationsComponent);
