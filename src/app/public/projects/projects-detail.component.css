@@ -1,0 +1,31 @@
+.container {
+    margin-top: 15vh;
+}
+
+p {
+    line-height: 1.8em;
+}
+
+#img-div {
+    display: none;
+}
+
+@media only screen and (min-width: 420px) {
+    #img-div {
+        display: block;
+        height: 80vh;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    div img {
+        position: fixed;
+        left: 75%;
+        top: 55vh;
+        width: 40%;
+        max-height: 80vh;
+        -webkit-transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%);
+    }
+}

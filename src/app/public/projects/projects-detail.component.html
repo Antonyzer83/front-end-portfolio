@@ -1,29 +1,31 @@
-<div *ngIf="project">
-    <div>
-        <h1>{{ project.title }}</h1>
-        <h2>{{ project.from_date }} - {{ project.to_date }}</h2>
+<div *ngIf="project" class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <h1>{{ project.title }}</h1>
+            <h2>{{ project.from_date }} - {{ project.to_date }}</h2>
 
-        <div>
-            <h3>Introduction :</h3>
-            <p>{{ project.intro }}</p>
+            <div>
+                <h3>Introduction :</h3>
+                <p>{{ project.intro }}</p>
+            </div>
+
+            <div>
+                <h3>Objectif :</h3>
+                <p>{{ project.goal }}</p>
+            </div>
+
+            <div>
+                <h3>Expérience :</h3>
+                <p>{{ project.experience }}</p>
+            </div>
+
+            <div *ngIf="project.git">
+                <a href="http://{{ project.git }}">Lien GitHub</a>
+            </div>
         </div>
 
-        <div>
-            <h3>Objectif :</h3>
-            <p>{{ project.goal }}</p>
+        <div class="col-sm-6" id="img-div">
+            <img src="./app/assets/images/{{ project.img_loc }}" alt="{{ project.title }}">
         </div>
-
-        <div>
-            <h3>Expérience :</h3>
-            <p>{{ project.experience }}</p>
-        </div>
-
-        <div *ngIf="project.git">
-            <a href="http://{{ project.git }}">Lien GitHub</a>
-        </div>
-    </div>
-
-    <div>
-        <img src="{{ project.img_id }}.png" alt="{{ project.title }}">
     </div>
 </div>

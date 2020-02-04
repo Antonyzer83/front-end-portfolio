@@ -8,6 +8,7 @@ import { Projects } from "./projects";
 @Component({
     selector: 'projects-detail',
     templateUrl: './app/public/projects/projects-detail.component.html',
+    styleUrls: ['./app/public/projects/projects-detail.component.css']
 })
 export class ProjectsDetailComponent implements OnInit {
 

@@ -33,6 +33,7 @@ ProjectsDetailComponent = __decorate([
     core_1.Component({
         selector: 'projects-detail',
         templateUrl: './app/public/projects/projects-detail.component.html',
+        styleUrls: ['./app/public/projects/projects-detail.component.css']
     }),
     __metadata("design:paramtypes", [router_1.ActivatedRoute,
         projects_service_1.ProjectsService])
