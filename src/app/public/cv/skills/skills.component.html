@@ -1,7 +1,7 @@
 <h2>Mes Compétences</h2>
 
-<div *ngFor="let skill of skills" class="text-center">
-    <span><img src="./app/assets/images/{{ skill.img_loc}}" alt="{{ skill.name }}">{{ skill.name }}</span>
+<div *ngFor="let skill of skills" class="text-center m-4">
+    <span><img src="./app/assets/images/{{ skill.img_loc}}" alt="{{ skill.name }}" class="mb-2 mr-2">{{ skill.name }}</span>
 
     <div class="progress">
         <div class="progress-bar" role="progressbar" [ngStyle]="{'width.%': skill.level}" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
