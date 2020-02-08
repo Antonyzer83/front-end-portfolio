@@ -1,5 +1,6 @@
 import { NgModule }      from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from "@angular/forms";
 
 import { CvModule } from "./cv/cv.module";
 
@@ -21,6 +22,7 @@ import { ContactService } from "./contact/contact.service";
 @NgModule({
     imports: [
         CommonModule,
+        FormsModule,
         CvModule,
         PublicRoutingModule
     ],

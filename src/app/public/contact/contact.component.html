@@ -1,5 +1,92 @@
-<div *ngIf="contact">
-    <p>Adresse mail : {{ contact[0].email }}</p>
-    <p>Numéro de téléphone : {{ contact[0].phone }}</p>
-    <p>Adresse : {{ contact[0].address }}</p>
+<div class="container">
+    <div class="row">
+
+        <div *ngIf="contact" class="col-sm-6">
+            <p>Adresse mail : {{ contact[0].email }}</p>
+            <p>Numéro de téléphone : {{ contact[0].phone }}</p>
+            <p>Adresse : {{ contact[0].address }}</p>
+        </div>
+
+        <div class="col-sm-6">
+            <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
+
+                <div class="form-group">
+                    <label>Prénom :</label>
+                    <input type="text" class="form-control" id="first_name"
+                            required
+                            pattern="^[a-zA-Z]{1,25}$"
+                            name="first_name"
+                            ngModel>
+
+                    <!--
+                    <div [hidden]="first_name.valid || first_name.pristine">
+                        Le prénom est requis (1-25).
+                    </div>
+                    -->
+                </div>
+
+                <div class="form-group">
+                    <label>Nom :</label>
+                    <input type="text" class="form-control" id="last_name"
+                           required
+                           pattern="^[a-zA-Z]{1,25}$"
+                           name="last_name"
+                           ngModel>
+
+                    <!--
+                    <div [hidden]="last_name.valid || last_name.pristine">
+                        Le nom de famille est requis (1-25).
+                    </div>
+                    -->
+                </div>
+
+                <div class="form-group">
+                    <label>Email :</label>
+                    <input type="email" class="form-control" id="email"
+                           required
+                           name="email"
+                           ngModel>
+                </div>
+
+                <div class="form-group">
+                    <label>Sujet :</label>
+                    <input type="text" class="form-control" id="subject"
+                           required
+                           pattern="^[a-zA-Z]{1,25}$"
+                           name="subject"
+                           ngModel>
+
+                    <!--
+                    <div [hidden]="subject.valid || subject.pristine">
+                        Le sujet est requis (1-25).
+                    </div>
+                    -->
+                </div>
+
+                <div class="form-group">
+                    <label>Message :</label>
+                    <input type="text" class="form-control" id="content"
+                           required
+                           pattern="^[a-zA-Z]{1,100}$"
+                           name="content"
+                           ngModel>
+
+                    <!--
+                    <div [hidden]="message.valid || message.pristine">
+                        Le message est requis (1-100).
+                    </div>
+                    -->
+                </div>
+
+                <div class="divider"></div>
+                <div class="section center">
+                    <button type="submit"
+                            class="waves-effect waves-light btn"
+                            [disabled]="!contactForm.form.valid">
+                        Valider</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
 </div>

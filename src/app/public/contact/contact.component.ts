@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 import { OnInit } from '@angular/core';
 
 import { ContactService } from "./contact.service";
 import { Contact } from "./contact";
+import { Message } from "./message";
+import {NgForm} from "@angular/forms";
 
 @Component({
     selector: 'contact',
@@ -11,6 +13,7 @@ import { Contact } from "./contact";
 export class ContactComponent implements OnInit{
 
     contact: Contact = null;
+    message: Message = null;
     error: string = null;
 
     constructor(private contactService: ContactService) { }
@@ -25,5 +28,10 @@ export class ContactComponent implements OnInit{
                 this.error = err;
             }
         );
+    }
+
+    onSubmit(contactForm: NgForm): void {
+        this.message = contactForm.value;
+        console.log(this.message);
     }
 }

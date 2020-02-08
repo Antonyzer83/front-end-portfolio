@@ -15,6 +15,7 @@ let ContactComponent = class ContactComponent {
     constructor(contactService) {
         this.contactService = contactService;
         this.contact = null;
+        this.message = null;
         this.error = null;
     }
     ngOnInit() {
@@ -24,6 +25,10 @@ let ContactComponent = class ContactComponent {
         }, (err) => {
             this.error = err;
         });
+    }
+    onSubmit(contactForm) {
+        this.message = contactForm.value;
+        console.log(this.message);
     }
 };
 ContactComponent = __decorate([
