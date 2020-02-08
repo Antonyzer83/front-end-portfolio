@@ -8,6 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
 const common_1 = require("@angular/common");
+const router_1 = require("@angular/router");
 const cv_component_1 = require("./cv.component");
 const skills_component_1 = require("./skills/skills.component");
 const experiences_component_1 = require("./experiences/experiences.component");
@@ -23,6 +24,7 @@ CvModule = __decorate([
     core_1.NgModule({
         imports: [
             common_1.CommonModule,
+            router_1.RouterModule
         ],
         declarations: [
             cv_component_1.CvComponent,

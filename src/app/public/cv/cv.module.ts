@@ -1,5 +1,6 @@
 import { NgModule }      from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 import { CvComponent } from "./cv.component";
 import { SkillsComponent } from "./skills/skills.component";
@@ -15,6 +16,7 @@ import { SchoolsService } from "./schools/schools.service";
 @NgModule({
     imports: [
         CommonModule,
+        RouterModule
     ],
     declarations: [
         CvComponent,
