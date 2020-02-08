@@ -1,10 +1,19 @@
 <div class="container">
+
+    <h1 class="text-center">Contact</h1>
+
     <div class="row">
 
         <div *ngIf="contact" class="col-sm-6">
-            <p>Adresse mail : {{ contact[0].email }}</p>
-            <p>Numéro de téléphone : {{ contact[0].phone }}</p>
-            <p>Adresse : {{ contact[0].address }}</p>
+            <p><img src="./app/assets/images/email.png" alt="Email">E-mail : {{ contact[0].email }}</p>
+            <p><img src="./app/assets/images/phone.png" alt="Email">Numéro de téléphone : {{ contact[0].phone }}</p>
+            <p><img src="./app/assets/images/address.png" alt="Adresse">Adresse : {{ contact[0].address }}</p>
+
+            <div class="d-flex justify-content-around mt-5">
+                <a href="https://www.linkedin.com/in/antony-castaner-a2b213171/" target="_blank"><img src="./app/assets/images/linkedin2.png" alt="Linkedin"></a>
+                <a href="https://www.instagram.com/antony_castaner/" target="_blank"><img src="./app/assets/images/instagram2.png" alt="Instagram"></a>
+                <a href="https://www.facebook.com/antony.toulonnais" target="_blank"><img src="./app/assets/images/facebook2.png" alt="Facebook"></a>
+            </div>
         </div>
 
         <div class="col-sm-6">

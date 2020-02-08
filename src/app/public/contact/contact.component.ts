@@ -9,6 +9,7 @@ import {NgForm} from "@angular/forms";
 @Component({
     selector: 'contact',
     templateUrl: './app/public/contact/contact.component.html',
+    styleUrls: [ './app/public/contact/contact.component.css' ]
 })
 export class ContactComponent implements OnInit{
 
