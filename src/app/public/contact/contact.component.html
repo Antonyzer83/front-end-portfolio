@@ -1,12 +1,12 @@
 <div class="container">
 
-    <h1 class="text-center">Contact</h1>
-
     <div class="row flex-column-reverse flex-md-row">
 
         <div *ngIf="contact" class="col-sm-6 mt-4">
-            <p><img src="./app/assets/images/email.png" alt="Email">E-mail : {{ contact[0].email }}</p>
-            <p><img src="./app/assets/images/phone.png" alt="Email">Numéro de téléphone : {{ contact[0].phone }}</p>
+            <h1 class="text-center">Contact</h1>
+
+            <p><img src="./app/assets/images/email.png" alt="Email">E-mail : <a href="mailto:{{ contact[0].email }}?subject=Contact">{{ contact[0].email }}</a></p>
+            <p><img src="./app/assets/images/phone.png" alt="Email">Numéro de téléphone : <a href="tel:{{ contact[0].phone }}">{{ contact[0].phone }}</a></p>
             <p><img src="./app/assets/images/address.png" alt="Adresse">Adresse : {{ contact[0].address }}</p>
 
             <div class="d-flex justify-content-around mt-5 mb-5">
