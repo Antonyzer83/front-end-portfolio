@@ -12,6 +12,7 @@ const http_1 = require("@angular/common/http");
 const app_routing_module_1 = require("./app-routing.module");
 const app_component_1 = require("./app.component");
 const public_module_1 = require("./public/public.module");
+const blog_module_1 = require("./blog/blog.module");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -20,6 +21,7 @@ AppModule = __decorate([
             platform_browser_1.BrowserModule,
             http_1.HttpClientModule,
             public_module_1.PublicModule,
+            blog_module_1.BlogModule,
             app_routing_module_1.AppRoutingModule,
         ],
         declarations: [
