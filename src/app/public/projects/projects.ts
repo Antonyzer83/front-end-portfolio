@@ -1,6 +1,6 @@
 export class Projects {
     constructor(
-        project_id: Int16Array,
+        project_id: number,
         title: string,
         from_date: Date,
         to_date: Date,
@@ -8,8 +8,8 @@ export class Projects {
         goal: string,
         experience: string,
         git: string,
-        img_id: Int16Array,
-        img_lov: string
+        img_id: number,
+        img_loc: string
     ) {
     }
 }

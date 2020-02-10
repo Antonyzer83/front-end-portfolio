@@ -1,17 +1,17 @@
 import { Injectable } from "@angular/core";
-import { Projects } from "./projects";
+import {Companies} from "./companies";
 
 import { HttpClient } from "@angular/common/http";
 import { Observable, of } from "rxjs";
 import { catchError, map, tap } from "rxjs/operators";
 
 @Injectable()
-export class ProjectsService {
+export class CompaniesService {
 
     constructor(private http: HttpClient) { }
 
     baseurl = "http://localhost:8000/api";
-    projects: Projects[];
+    companies: Companies[];
 
     /**
      * Display the action
@@ -38,32 +38,16 @@ export class ProjectsService {
     }
 
     /**
-     * Get the projects
+     * Get the companies
      */
-    getProjects(): Observable<Projects> {
-        return this.http.get(`${this.baseurl}/projects`).pipe(
+    getCompanies(): Observable<Companies> {
+        return this.http.get(`${this.baseurl}/blog`).pipe(
             map((res) => {
-                this.projects = res['data'];
-                return this.projects;
+                this.companies = res['data'];
+                return this.companies;
             }),
-            tap(_ => this.log('fetched projects')),
-            catchError(this.handleError('getProjects', []))
-        );
-    }
-
-    /**
-     * Get one project
-     *
-     * @param id
-     */
-    getProject(id: number): Observable<Projects> {
-        return this.http.get(`${this.baseurl}/projects/${id}`).pipe(
-            map((res) => {
-                this.projects = res['data'];
-                return this.projects;
-            }),
-            tap(_ => this.log('fetched project')),
-            catchError(this.handleError('getProject', []))
+            tap(_ => this.log('fetched companies')),
+            catchError(this.handleError('getCompanies', []))
         );
     }
 }

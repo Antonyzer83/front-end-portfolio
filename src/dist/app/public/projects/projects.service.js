@@ -48,6 +48,11 @@ let ProjectsService = class ProjectsService {
             return this.projects;
         }), operators_1.tap(_ => this.log('fetched projects')), operators_1.catchError(this.handleError('getProjects', [])));
     }
+    /**
+     * Get one project
+     *
+     * @param id
+     */
     getProject(id) {
         return this.http.get(`${this.baseurl}/projects/${id}`).pipe(operators_1.map((res) => {
             this.projects = res['data'];

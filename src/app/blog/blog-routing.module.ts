@@ -1,8 +1,10 @@
 import { NgModule }              from '@angular/core';
 import { RouterModule, Routes }  from '@angular/router';
 
-const blogRoutes: Routes = [
+import { CompaniesListComponent } from "./companies/companies-list.component";
 
+const blogRoutes: Routes = [
+    {path: 'blog', component: CompaniesListComponent },
 ];
 
 @NgModule({
