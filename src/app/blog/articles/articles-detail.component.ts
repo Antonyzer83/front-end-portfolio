@@ -13,14 +13,15 @@ import { ActivatedRoute } from "@angular/router";
 export class ArticlesDetailComponent implements OnInit {
 
     article: Articles = null;
+    company_id: number = null;
     error: string = null;
 
     constructor(private route: ActivatedRoute, private articlesService: ArticlesService) { }
 
     ngOnInit(): void {
-        let company_id = +this.route.snapshot.paramMap.get('company_id');
+        this.company_id = +this.route.snapshot.paramMap.get('company_id');
         let article_id = +this.route.snapshot.paramMap.get('article_id');
-        this.articlesService.getArticle(company_id, article_id).subscribe(
+        this.articlesService.getArticle(this.company_id, article_id).subscribe(
             (res: Articles) => {
                 this.article = res;
                 console.log(this.article);
