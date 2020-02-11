@@ -8,6 +8,7 @@ import { AppComponent }  from './app.component';
 
 import { PublicModule } from "./public/public.module";
 import { BlogModule } from "./blog/blog.module";
+import { GlobalService } from "./shared/global.service";
 
 @NgModule({
     imports: [
@@ -20,6 +21,11 @@ import { BlogModule } from "./blog/blog.module";
     declarations: [
         AppComponent
     ],
-    bootstrap: [ AppComponent ]
+    bootstrap: [
+        AppComponent
+    ],
+    providers : [
+        GlobalService,
+    ]
 })
 export class AppModule { }

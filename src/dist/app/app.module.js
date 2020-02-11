@@ -13,6 +13,7 @@ const app_routing_module_1 = require("./app-routing.module");
 const app_component_1 = require("./app.component");
 const public_module_1 = require("./public/public.module");
 const blog_module_1 = require("./blog/blog.module");
+const global_service_1 = require("./shared/global.service");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -27,7 +28,12 @@ AppModule = __decorate([
         declarations: [
             app_component_1.AppComponent
         ],
-        bootstrap: [app_component_1.AppComponent]
+        bootstrap: [
+            app_component_1.AppComponent
+        ],
+        providers: [
+            global_service_1.GlobalService,
+        ]
     })
 ], AppModule);
 exports.AppModule = AppModule;
