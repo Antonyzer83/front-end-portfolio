@@ -6,6 +6,7 @@ import { BlogRoutingModule } from "./blog-routing.module";
 import { CompaniesListComponent } from "./companies/companies-list.component";
 import { CompaniesDetailComponent } from "./companies/companies-detail.component";
 import { ArticlesListComponent } from "./articles/articles-list.component";
+import { ArticlesDetailComponent } from "./articles/articles-detail.component";
 
 import { CompaniesService } from "./companies/companies.service";
 import { ArticlesService } from "./articles/articles.service";
@@ -19,6 +20,7 @@ import { ArticlesService } from "./articles/articles.service";
         CompaniesListComponent,
         CompaniesDetailComponent,
         ArticlesListComponent,
+        ArticlesDetailComponent,
     ],
     exports: [
 

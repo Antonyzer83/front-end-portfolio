@@ -13,13 +13,14 @@ import { ActivatedRoute } from "@angular/router";
 export class ArticlesListComponent implements OnInit {
 
     articles: Articles[] = null;
+    id: number = null;
     error: string = null;
 
     constructor(private route: ActivatedRoute, private articlesService: ArticlesService) { }
 
     ngOnInit(): void {
-        let id = +this.route.snapshot.paramMap.get('id');
-        this.articlesService.getArticles(id).subscribe(
+        this.id = +this.route.snapshot.paramMap.get('id');
+        this.articlesService.getArticles(this.id).subscribe(
             (res: Articles[]) => {
                 this.articles = res;
                 console.log(this.articles);
