@@ -11,47 +11,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
 const http_1 = require("@angular/common/http");
-const rxjs_1 = require("rxjs");
 const operators_1 = require("rxjs/operators");
+const global_service_1 = require("../../../shared/global.service");
 let ExperiencesService = class ExperiencesService {
-    constructor(http) {
+    constructor(http, globalService) {
         this.http = http;
-        this.baseurl = "http://localhost:8000/api";
-    }
-    /**
-     * Display the action
-     *
-     * @param log
-     */
-    log(log) {
-        console.info(log);
-    }
-    /**
-     * Display the error
-     *
-     * @param operation
-     * @param result
-     */
-    handleError(operation = 'operation', result) {
-        return (error) => {
-            console.log(error);
-            console.log(`${operation} failded ${error.message}`);
-            return rxjs_1.of(result);
-        };
+        this.globalService = globalService;
     }
     /**
      * Get the experiences
      */
     getExperiences() {
-        return this.http.get(`${this.baseurl}/experiences`).pipe(operators_1.map((res) => {
+        return this.http.get(`${this.globalService.baseurl}/experiences`).pipe(operators_1.map((res) => {
             this.experiences = res['data'];
             return this.experiences;
-        }), operators_1.tap(_ => this.log('fetched experiences')), operators_1.catchError(this.handleError('getExperiences', [])));
+        }), operators_1.tap(_ => this.globalService.log('fetched experiences')), operators_1.catchError(this.globalService.handleError('getExperiences', [])));
     }
 };
 ExperiencesService = __decorate([
     core_1.Injectable(),
-    __metadata("design:paramtypes", [http_1.HttpClient])
+    __metadata("design:paramtypes", [http_1.HttpClient, global_service_1.GlobalService])
 ], ExperiencesService);
 exports.ExperiencesService = ExperiencesService;
 //# sourceMappingURL=experiences.service.js.map

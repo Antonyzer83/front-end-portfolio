@@ -1,11 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
-import {Observable, of} from "rxjs";
+import { Observable, of } from "rxjs";
 
 @Injectable()
 export class GlobalService {
-
-    constructor(private http: HttpClient) { }
 
     baseurl = "http://antonycastaner.ddns.net/api";
 

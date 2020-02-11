@@ -5,49 +5,26 @@ import { HttpClient } from "@angular/common/http";
 import { Observable, of } from "rxjs";
 import { catchError, map, tap } from "rxjs/operators";
 
+import { GlobalService } from "../../shared/global.service";
+
 @Injectable()
 export class ContactService {
 
-    constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient, private globalService: GlobalService) { }
 
-    baseurl = "http://localhost:8000/api";
     contact: Contact[];
-
-    /**
-     * Display the action
-     *
-     * @param log
-     */
-    private log(log: string) {
-        console.info(log);
-    }
-
-    /**
-     * Display the error
-     *
-     * @param operation
-     * @param result
-     */
-    private handleError<T>(operation='operation', result?: T) {
-        return (error: any): Observable<T> => {
-            console.log(error);
-            console.log(`${operation} failded ${error.message}`);
-
-            return of(result as T);
-        }
-    }
 
     /**
      * Get the contact infos
      */
     getContact(): Observable<Contact> {
-        return this.http.get<Contact>(`${this.baseurl}/infos`).pipe(
+        return this.http.get<Contact>(`${this.globalService.baseurl}/infos`).pipe(
             map((res) => {
                 this.contact = res['data'];
                 return this.contact;
             }),
-            tap(_ => this.log('fetched contact')),
-            catchError(this.handleError('getContact', []))
+            tap(_ => this.globalService.log('fetched contact')),
+            catchError(this.globalService.handleError('getContact', []))
         )
     }
 }

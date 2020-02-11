@@ -5,49 +5,26 @@ import { HttpClient } from "@angular/common/http";
 import { Observable, of } from "rxjs";
 import { catchError, map, tap } from "rxjs/operators";
 
+import { GlobalService } from "../../shared/global.service";
+
 @Injectable()
 export class ProjectsService {
 
-    constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient, private globalService: GlobalService) { }
 
-    baseurl = "http://localhost:8000/api";
     projects: Projects[];
-
-    /**
-     * Display the action
-     *
-     * @param log
-     */
-    private log(log: string) {
-        console.info(log);
-    }
-
-    /**
-     * Display the error
-     *
-     * @param operation
-     * @param result
-     */
-    private handleError<T>(operation='operation', result?: T) {
-        return (error: any): Observable<T> => {
-            console.log(error);
-            console.log(`${operation} failded ${error.message}`);
-
-            return of(result as T);
-        }
-    }
 
     /**
      * Get the projects
      */
     getProjects(): Observable<Projects> {
-        return this.http.get(`${this.baseurl}/projects`).pipe(
+        return this.http.get(`${this.globalService.baseurl}/projects`).pipe(
             map((res) => {
                 this.projects = res['data'];
                 return this.projects;
             }),
-            tap(_ => this.log('fetched projects')),
-            catchError(this.handleError('getProjects', []))
+            tap(_ => this.globalService.log('fetched projects')),
+            catchError(this.globalService.handleError('getProjects', []))
         );
     }
 
@@ -57,13 +34,13 @@ export class ProjectsService {
      * @param id
      */
     getProject(id: number): Observable<Projects> {
-        return this.http.get(`${this.baseurl}/projects/${id}`).pipe(
+        return this.http.get(`${this.globalService.baseurl}/projects/${id}`).pipe(
             map((res) => {
                 this.projects = res['data'];
                 return this.projects;
             }),
-            tap(_ => this.log('fetched project')),
-            catchError(this.handleError('getProject', []))
+            tap(_ => this.globalService.log('fetched project')),
+            catchError(this.globalService.handleError('getProject', []))
         );
     }
 }

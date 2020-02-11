@@ -11,47 +11,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
 const http_1 = require("@angular/common/http");
-const rxjs_1 = require("rxjs");
 const operators_1 = require("rxjs/operators");
+const global_service_1 = require("../../shared/global.service");
 let ContactService = class ContactService {
-    constructor(http) {
+    constructor(http, globalService) {
         this.http = http;
-        this.baseurl = "http://localhost:8000/api";
-    }
-    /**
-     * Display the action
-     *
-     * @param log
-     */
-    log(log) {
-        console.info(log);
-    }
-    /**
-     * Display the error
-     *
-     * @param operation
-     * @param result
-     */
-    handleError(operation = 'operation', result) {
-        return (error) => {
-            console.log(error);
-            console.log(`${operation} failded ${error.message}`);
-            return rxjs_1.of(result);
-        };
+        this.globalService = globalService;
     }
     /**
      * Get the contact infos
      */
     getContact() {
-        return this.http.get(`${this.baseurl}/infos`).pipe(operators_1.map((res) => {
+        return this.http.get(`${this.globalService.baseurl}/infos`).pipe(operators_1.map((res) => {
             this.contact = res['data'];
             return this.contact;
-        }), operators_1.tap(_ => this.log('fetched contact')), operators_1.catchError(this.handleError('getContact', [])));
+        }), operators_1.tap(_ => this.globalService.log('fetched contact')), operators_1.catchError(this.globalService.handleError('getContact', [])));
     }
 };
 ContactService = __decorate([
     core_1.Injectable(),
-    __metadata("design:paramtypes", [http_1.HttpClient])
+    __metadata("design:paramtypes", [http_1.HttpClient, global_service_1.GlobalService])
 ], ContactService);
 exports.ContactService = ContactService;
 //# sourceMappingURL=contact.service.js.map
