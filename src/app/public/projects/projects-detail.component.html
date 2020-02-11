@@ -6,17 +6,17 @@
 
             <div>
                 <h3>Introduction :</h3>
-                <p>{{ project.intro }}</p>
+                <p [innerHTML]="project.intro"></p>
             </div>
 
             <div>
                 <h3>Objectif :</h3>
-                <p>{{ project.goal }}</p>
+                <p [innerHTML]="project.goal"></p>
             </div>
 
             <div>
                 <h3>Expérience :</h3>
-                <p>{{ project.experience }}</p>
+                <p [innerHTML]="project.experience"></p>
             </div>
 
             <div *ngIf="project.git">

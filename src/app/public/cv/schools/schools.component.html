@@ -4,6 +4,6 @@
     <div *ngFor="let school of schools" class="p-4 text-center">
         <h3>{{ school.school }} | {{ school.diplom }}</h3>
         <h4>{{ convertDates(school.from_date) }} - {{ convertDates(school.to_date) }}</h4>
-        <p>{{ school.descr }}</p>
+        <p [innerHTML]=school.descr></p>
     </div>
 </div>
