@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { BlogRoutingModule } from "./blog-routing.module";
 
 import { CompaniesListComponent } from "./companies/companies-list.component";
+import { CompaniesDetailComponent } from "./companies/companies-detail.component";
 
 import { CompaniesService } from "./companies/companies.service";
 
@@ -14,6 +15,7 @@ import { CompaniesService } from "./companies/companies.service";
     ],
     declarations: [
         CompaniesListComponent,
+        CompaniesDetailComponent,
     ],
     exports: [
 

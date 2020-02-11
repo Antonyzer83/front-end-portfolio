@@ -3,6 +3,6 @@
     <h1>Mon Blog</h1>
 
     <div class="row">
-        <a *ngFor="let company of companies">{{ company.name }}</a>
+        <a *ngFor="let company of companies" [routerLink]="['/blog/', company.company_id]" routerLinkActive = "router-link-active">{{ company.name }}</a>
     </div>
 </div>

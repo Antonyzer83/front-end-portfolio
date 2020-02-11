@@ -27,4 +27,20 @@ export class CompaniesService {
             catchError(this.globalService.handleError('getCompanies', []))
         );
     }
+
+    /**
+     * Get one company
+     *
+     * @param id
+     */
+    getCompany(id: number): Observable<Companies> {
+        return this.http.get(`${this.globalService.baseurl}/blog/${id}/company`).pipe(
+            map((res) => {
+                this.companies = res['data'];
+                return this.companies;
+            }),
+            tap(_ => this.globalService.log('fetched company')),
+            catchError(this.globalService.handleError('getCompany', []))
+        );
+    }
 }
