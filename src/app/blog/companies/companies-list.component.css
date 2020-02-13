@@ -1,3 +1,24 @@
 .container {
     margin-top: 15vh;
 }
+
+ul {
+    width: 70%;
+    margin: auto;
+}
+
+li {
+    list-style: none;
+    transition: ease 0.5s;
+}
+
+li:hover {
+    transform: scale(1.2);
+    transition: ease 0.5s;
+}
+
+a:link, a:visited, a:hover {
+    color: black;
+    text-decoration: none;
+    letter-spacing: 0.2em;
+}

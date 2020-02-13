@@ -1,8 +1,12 @@
-<div class="container">
+<div class="container text-center">
 
     <h1>Mon Blog</h1>
 
     <div class="row">
-        <a *ngFor="let company of companies" [routerLink]="['/blog/', company.company_id]" routerLinkActive = "router-link-active">{{ company.name }}</a>
+        <ul class="mt-5 p-0">
+            <li *ngFor="let company of companies">
+                <a [routerLink]="['/blog/', company.company_id]" routerLinkActive = "router-link-active">{{ company.name }}</a>
+            </li>
+        </ul>
     </div>
 </div>

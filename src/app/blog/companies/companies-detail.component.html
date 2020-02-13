@@ -1,15 +1,24 @@
 <div class="container">
     <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-6 pl-5 pr-5">
             <h2>{{ company.name }}</h2>
 
             <h3>{{ company.loc }}</h3>
 
-            <p>Histoire : {{ company.history }}</p>
+            <div>
+                <h4>Histoire</h4>
+                <p>{{ company.history }}</p>
+            </div>
 
-            <p>Activité : {{ company.activity }}</p>
+            <div>
+                <h4>Activité</h4>
+                <p>{{ company.activity }}</p>
+            </div>
 
-            <p>Contexte : {{ company.context }}</p>
+            <div>
+                <h4>Contexte</h4>
+                <p>{{ company.context }}</p>
+            </div>
         </div>
         <div class="col-sm-6">
             <articles-list></articles-list>

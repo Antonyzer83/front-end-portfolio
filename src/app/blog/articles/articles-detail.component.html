@@ -1,13 +1,13 @@
 <div class="container">
     <div class="row">
-        <div class="col-12">
-            <h1>{{ article[0].title }}</h1>
+        <div class="col-12 pl-5 pr-5">
+            <h1 class="text-center">{{ article[0].title }}</h1>
 
-            <span>Publié le {{ article[0].date | date: 'dd-MM-yyyy' }}</span>
+            <span class="mb-3 font-italic">Publié le {{ article[0].date | date: 'dd-MM-yyyy' }}</span>
 
             <p [innerHTML]="article[0].intro"></p>
 
-            <img *ngIf="article[0].img_loc" src="./app/assets/images/blog/{{ article[0].img_loc }}" alt="{{ article[0].title }}">
+            <img class="rounded mx-auto d-block" *ngIf="article[0].img_loc" src="./app/assets/images/blog/{{ article[0].img_loc }}" alt="{{ article[0].title }}">
 
             <p *ngIf="article[0].problem" [innerHTML]="article[0].problem"></p>
 
@@ -19,9 +19,7 @@
 
             <a *ngIf="article[0].actu" href="{{ article[0].actu }}" target="_blank">Actualité</a>
 
-            <img *ngIf="article[0].img_stat" src="./app/assets/images/blog/{{ article[0].img_stat }}" alt="Stats">
-
-            <a [routerLink]="['/blog/', company_id]" routerLinkActive = "router-link-active">Retour à la page précédente</a>
+            <img class="rounded mx-auto d-block" *ngIf="article[0].img_stat" src="./app/assets/images/blog/{{ article[0].img_stat }}" alt="Stats">
         </div>
     </div>
 </div>

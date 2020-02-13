@@ -1,11 +1,22 @@
-ul {
+/*ul {
     position: fixed;
     left: 60%;
     top: 20vh;
+}*/
+
+ul {
+    width: 70%;
+    margin: auto;
 }
 
 li {
     list-style: none;
+    transition: ease 0.5s;
+}
+
+li:hover {
+    transform: scale(1.2);
+    transition: ease 0.5s;
 }
 
 a:link, a:visited, a:hover {
