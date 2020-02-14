@@ -11,14 +11,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
 const contact_service_1 = require("./contact.service");
+const platform_browser_1 = require("@angular/platform-browser");
 let ContactComponent = class ContactComponent {
-    constructor(contactService) {
+    constructor(contactService, titleService) {
         this.contactService = contactService;
+        this.titleService = titleService;
         this.contact = null;
         this.message = null;
         this.error = null;
     }
     ngOnInit() {
+        this.titleService.setTitle("CASTANER Antony | Contact");
         this.contactService.getContact().subscribe((res) => {
             this.contact = res;
             console.log(this.contact);
@@ -37,7 +40,7 @@ ContactComponent = __decorate([
         templateUrl: './app/public/contact/contact.component.html',
         styleUrls: ['./app/public/contact/contact.component.css']
     }),
-    __metadata("design:paramtypes", [contact_service_1.ContactService])
+    __metadata("design:paramtypes", [contact_service_1.ContactService, platform_browser_1.Title])
 ], ContactComponent);
 exports.ContactComponent = ContactComponent;
 //# sourceMappingURL=contact.component.js.map

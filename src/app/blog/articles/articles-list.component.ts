@@ -4,6 +4,7 @@ import { OnInit } from "@angular/core";
 import { ArticlesService } from "./articles.service";
 import { Articles } from "./articles";
 import { ActivatedRoute } from "@angular/router";
+import {Title} from "@angular/platform-browser";
 
 @Component({
     selector: 'articles-list',
@@ -16,9 +17,10 @@ export class ArticlesListComponent implements OnInit {
     id: number = null;
     error: string = null;
 
-    constructor(private route: ActivatedRoute, private articlesService: ArticlesService) { }
+    constructor(private route: ActivatedRoute, private articlesService: ArticlesService, private titleService: Title) { }
 
     ngOnInit(): void {
+        this.titleService.setTitle("CASTANER Antony | Blog");
         this.id = +this.route.snapshot.paramMap.get('id');
         this.articlesService.getArticles(this.id).subscribe(
             (res: Articles[]) => {

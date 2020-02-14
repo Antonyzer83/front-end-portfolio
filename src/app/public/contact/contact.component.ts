@@ -4,7 +4,8 @@ import { OnInit } from '@angular/core';
 import { ContactService } from "./contact.service";
 import { Contact } from "./contact";
 import { Message } from "./message";
-import {NgForm} from "@angular/forms";
+import { NgForm } from "@angular/forms";
+import { Title } from "@angular/platform-browser";
 
 @Component({
     selector: 'contact',
@@ -17,9 +18,10 @@ export class ContactComponent implements OnInit{
     message: Message = null;
     error: string = null;
 
-    constructor(private contactService: ContactService) { }
+    constructor(private contactService: ContactService, private titleService: Title) { }
 
     ngOnInit(): void {
+        this.titleService.setTitle("CASTANER Antony | Contact");
         this.contactService.getContact().subscribe(
             (res: Contact) => {
                 this.contact = res;

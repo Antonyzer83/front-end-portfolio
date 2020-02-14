@@ -3,6 +3,7 @@ import { OnInit } from '@angular/core';
 
 import { HomeService } from "./home.service";
 import { Home } from "./home";
+import { Title } from "@angular/platform-browser";
 
 @Component({
     selector: 'home',
@@ -17,9 +18,10 @@ export class HomeComponent implements OnInit {
     home: Home = null;
     error: string = null;
 
-    constructor(private homeService: HomeService) { }
+    constructor(private homeService: HomeService, private titleService: Title) { }
 
     ngOnInit(): void {
+        this.titleService.setTitle("CASTANER Antony | Accueil");
         this.homeService.getHome().subscribe(
             (res: Home[]) => {
                 this.home = res;

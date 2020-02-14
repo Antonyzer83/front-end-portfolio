@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Title} from "@angular/platform-browser";
 
 @Component({
     selector: 'cv',
@@ -8,4 +9,11 @@ import { Component } from '@angular/core';
         './app/shared/button.component.css',
     ],
 })
-export class CvComponent { }
+export class CvComponent implements OnInit {
+
+    constructor(private titleService: Title) { }
+
+    ngOnInit(): void {
+        this.titleService.setTitle("CASTANER Antony | CV");
+    }
+}

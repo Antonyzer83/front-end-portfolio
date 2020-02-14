@@ -3,6 +3,7 @@ import { OnInit } from "@angular/core";
 
 import { CompaniesService } from "./companies.service";
 import { Companies } from "./companies";
+import {Title} from "@angular/platform-browser";
 
 @Component({
     selector: 'companies-list',
@@ -14,9 +15,10 @@ export class CompaniesListComponent implements OnInit {
     companies: Companies[] = null;
     error: string = null;
 
-    constructor(private companiesService: CompaniesService) { }
+    constructor(private companiesService: CompaniesService, private titleService: Title) { }
 
     ngOnInit(): void {
+        this.titleService.setTitle("CASTANER Antony | Blog");
         this.companiesService.getCompanies().subscribe(
             (res: Companies[]) => {
                 this.companies = res;
