@@ -7,6 +7,7 @@ import { Experiences } from "./experiences";
 @Component({
     selector: 'experiences',
     templateUrl: './app/public/cv/experiences/experiences.component.html',
+    styleUrls: ['./app/public/cv/experiences/experiences.component.css']
 })
 export class ExperiencesComponent implements OnInit {
 

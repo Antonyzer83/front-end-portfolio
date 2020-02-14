@@ -35,6 +35,7 @@ ExperiencesComponent = __decorate([
     core_1.Component({
         selector: 'experiences',
         templateUrl: './app/public/cv/experiences/experiences.component.html',
+        styleUrls: ['./app/public/cv/experiences/experiences.component.css']
     }),
     __metadata("design:paramtypes", [experiences_service_1.ExperiencesService])
 ], ExperiencesComponent);

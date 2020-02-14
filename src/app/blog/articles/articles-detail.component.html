@@ -1,6 +1,12 @@
 <div class="container">
     <div class="row">
-        <div class="col-12 pl-5 pr-5">
+        <div *ngIf="article" class="col-12 pl-5 pr-5">
+
+            <div>
+                <a *ngIf="article[0].article_id > 1" [routerLink]="['/blog/', company_id, 'articles', article[0].article_id - 1]" routerLinkActive = "router-link-active">Article précédent</a>
+                <a *ngIf="article[0].title != 'Bilan'" [routerLink]="['/blog/', company_id, 'articles', article[0].article_id + 1]" routerLinkActive = "router-link-active">Article suivant</a>
+            </div>
+
             <h1 class="text-center">{{ article[0].title }}</h1>
 
             <span class="mb-3 font-italic">Publié le {{ article[0].date | date: 'dd-MM-yyyy' }}</span>

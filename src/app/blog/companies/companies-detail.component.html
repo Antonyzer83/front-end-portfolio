@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row">
-        <div class="col-sm-6 pl-5 pr-5">
+        <div *ngIf="company" class="col-sm-6 pl-5 pr-5">
             <h2>{{ company.name }}</h2>
 
             <h3>{{ company.loc }}</h3>
